@@ -30,6 +30,9 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         h1, h2, h3, h4 {
@@ -40,8 +43,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
 
+        /* Header / Navbar */
         header {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -60,40 +65,81 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 15px;
+            cursor: pointer;
         }
 
+        /* Увеличенный логотип */
         .logo-container img {
-            height: 55px;
+            height: 90px;
             width: auto;
+            transition: transform 0.2s;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.03);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 15px;
         }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-dark);
+        .nav-tab {
+            background: none;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
             font-weight: 600;
-            transition: color 0.3s;
+            color: var(--text-dark);
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-tab:hover {
             color: var(--primary-color);
+            background-color: rgba(43, 91, 92, 0.08);
         }
 
+        .nav-tab.active {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Content Area & Tabs */
+        main {
+            flex: 1;
+            padding: 40px 0;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero / About Tab */
         .hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
             color: var(--white);
-            padding: 80px 0;
+            padding: 80px 40px;
             text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 20px;
             font-weight: 800;
         }
@@ -122,8 +168,9 @@
             padding: 14px 32px;
             border-radius: 6px;
             font-weight: 700;
-            text-decoration: none;
             text-transform: uppercase;
+            border: none;
+            cursor: pointer;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: transform 0.2s, background-color 0.2s;
         }
@@ -133,10 +180,11 @@
             background-color: #e5be3d;
         }
 
+        /* Vacancies Tab */
         .section-title {
             text-align: center;
-            font-size: 2rem;
-            margin: 50px 0 30px 0;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             color: var(--primary-dark);
         }
 
@@ -144,7 +192,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-bottom: 60px;
         }
 
         .vacancy-card {
@@ -175,10 +222,10 @@
             display: block;
         }
 
+        /* Contacts Tab */
         .info-section {
             background-color: var(--white);
-            padding: 50px 0;
-            margin-bottom: 60px;
+            padding: 50px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
@@ -193,15 +240,16 @@
         .contacts-box h3 {
             margin-bottom: 20px;
             color: var(--primary-dark);
+            font-size: 1.5rem;
         }
 
         .phone-list {
             list-style: none;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .phone-list li {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 10px;
             color: var(--primary-color);
@@ -213,7 +261,7 @@
         }
 
         .meta-info {
-            font-size: 0.95rem;
+            font-size: 1rem;
             color: var(--text-muted);
             line-height: 1.8;
         }
@@ -222,26 +270,29 @@
             text-align: center;
         }
 
+        /* Увеличенная печать */
         .seal-box img {
-            max-width: 200px;
+            max-width: 260px;
             height: auto;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         .legal-notice {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             color: #888;
             margin-top: 15px;
             text-align: center;
             font-style: italic;
         }
 
+        /* Footer */
         footer {
             background-color: var(--primary-dark);
             color: var(--white);
-            padding: 30px 0;
+            padding: 25px 0;
             text-align: center;
             font-size: 0.9rem;
+            margin-top: auto;
         }
 
         footer p {
@@ -249,15 +300,22 @@
         }
 
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .logo-container img {
+                height: 70px;
+            }
             .info-content {
                 grid-template-columns: 1fr;
                 text-align: center;
             }
+            .hero {
+                padding: 50px 20px;
+            }
             .hero h1 {
                 font-size: 2rem;
-            }
-            .nav-links {
-                display: none;
             }
         }
     </style>
@@ -267,51 +325,54 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo-container">
+                <div class="logo-container" onclick="openTab('about')">
                     <img src="logo.png" alt="АЛЛАХ БАНК Логотип">
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#about">Про Банк</a></li>
-                    <li><a href="#vacancies">Вакансії</a></li>
-                    <li><a href="#contacts">Контакти</a></li>
+                    <li><button class="nav-tab active" onclick="openTab('about')">Про Банк</button></li>
+                    <li><button class="nav-tab" onclick="openTab('vacancies')">Вакансії</button></li>
+                    <li><button class="nav-tab" onclick="openTab('contacts')">Контакти</button></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero" id="about">
-        <div class="container">
-            <div class="badge">Новий український банк</div>
-            <h1>АЛЛАХ БАНК</h1>
-            <p>Фінансова установа нового покоління. Надійність, стабільність та інноваційні фінансові рішення.</p>
-            <a href="#vacancies" class="cta-btn">Приєднатися до команди</a>
+    <main class="container">
+        <!-- Вкладка: Про Банк -->
+        <div id="about" class="tab-content active">
+            <section class="hero">
+                <div class="badge">Новий український банк</div>
+                <h1>АЛЛАХ БАНК</h1>
+                <p>Фінансова установа нового покоління. Надійність, стабільність та інноваційні фінансові рішення.</p>
+                <button class="cta-btn" onclick="openTab('vacancies')">Приєднатися до команди</button>
+            </section>
         </div>
-    </section>
 
-    <section class="container" id="vacancies">
-        <h2 class="section-title">Шукаємо робітників</h2>
-        <div class="vacancies-grid">
-            <div class="vacancy-card">
-                <span class="status">● Активна вакансія</span>
-                <h3>Маркетолог</h3>
-                <p>Розробка та реалізація стратегій просування бренду "АЛЛАХ БАНК" на українському та міжнародному ринках.</p>
-            </div>
-            <div class="vacancy-card">
-                <span class="status">● Активна вакансія</span>
-                <h3>Аллах</h3>
-                <p>Стратегічне керівництво та вищий нагляд за всіма фінансовими операціями і діяльністю банку.</p>
-            </div>
-            <div class="vacancy-card">
-                <span class="status">● Активна вакансія</span>
-                <h3>Пророк Муххамад</h3>
-                <p>Головний представник, духовний та операційний наставник фінансової установи.</p>
+        <!-- Вкладка: Вакансии -->
+        <div id="vacancies" class="tab-content">
+            <h2 class="section-title">Шукаємо робітників</h2>
+            <div class="vacancies-grid">
+                <div class="vacancy-card">
+                    <span class="status">● Активна вакансія</span>
+                    <h3>Маркетолог</h3>
+                    <p>Розробка та реалізація стратегій просування бренду "АЛЛАХ БАНК" на українському та міжнародному ринках.</p>
+                </div>
+                <div class="vacancy-card">
+                    <span class="status">● Активна вакансія</span>
+                    <h3>Аллах</h3>
+                    <p>Стратегічне керівництво та вищий нагляд за всіма фінансовими операціями і діяльністю банку.</p>
+                </div>
+                <div class="vacancy-card">
+                    <span class="status">● Активна вакансія</span>
+                    <h3>Пророк Муххамад</h3>
+                    <p>Головний представник, духовний та операційний наставник фінансової установи.</p>
+                </div>
             </div>
         </div>
-    </section>
 
-    <section class="container" id="contacts">
-        <div class="info-section">
-            <div class="container">
+        <!-- Вкладка: Контакты -->
+        <div id="contacts" class="tab-content">
+            <div class="info-section">
                 <div class="info-content">
                     <div class="contacts-box">
                         <h3>Телефонуйте за номерами:</h3>
@@ -335,13 +396,34 @@
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2026 АЛЛАХ БАНК (Financial Institution). Всі права захищено.</p>
         </div>
     </footer>
+
+    <script>
+        function openTab(tabId) {
+            // Скрываем все вкладки
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Убираем активный класс со всех кнопок
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Показываем нужную вкладку
+            document.getElementById(tabId).classList.add('active');
+
+            // Подсвечиваем активную кнопку
+            const activeTab = Array.from(tabs).find(tab => tab.getAttribute('onclick').includes(tabId));
+            if (activeTab) {
+                activeTab.classList.add('active');
+            }
+        }
+    </script>
 
 </body>
 </html>
