@@ -92,6 +92,7 @@
             display: flex;
             list-style: none;
             gap: 10px;
+            align-items: center;
         }
 
         .nav-tab {
@@ -114,6 +115,32 @@
 
         .nav-tab.active {
             background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Переключатель языка */
+        .lang-switch {
+            display: flex;
+            gap: 5px;
+            margin-left: 10px;
+            background: #eee;
+            padding: 4px;
+            border-radius: 6px;
+        }
+
+        .lang-btn {
+            border: none;
+            background: none;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn.active {
+            background: var(--primary-color);
             color: var(--white);
         }
 
@@ -271,7 +298,6 @@
             margin-bottom: 15px;
         }
 
-        /* Crypto Deposit Widget */
         .crypto-card {
             background: var(--white);
             padding: 35px;
@@ -453,7 +479,7 @@
 </head>
 <body>
 
-    <div class="funding-banner">
+    <div class="funding-banner" id="fundingBanner">
         ОФІЦІЙНО: Новий український банк за фінансуванням Ізраїля та Китая
     </div>
 
@@ -464,10 +490,16 @@
                     <img src="logo.png" alt="АЛЛАХ БАНК Логотип">
                 </div>
                 <ul class="nav-links">
-                    <li><button class="nav-tab active" onclick="openTab('about')">Про Банк</button></li>
-                    <li><button class="nav-tab" onclick="openTab('vacancies')">Вакансії (7)</button></li>
-                    <li><button class="nav-tab" onclick="openTab('crypto')">КриптоДепозит</button></li>
-                    <li><button class="nav-tab" onclick="openTab('contacts')">Контакти</button></li>
+                    <li><button class="nav-tab active" id="tabAbout" onclick="openTab('about')">Про Банк</button></li>
+                    <li><button class="nav-tab" id="tabVacancies" onclick="openTab('vacancies')">Вакансії (7)</button></li>
+                    <li><button class="nav-tab" id="tabCrypto" onclick="openTab('crypto')">КриптоДепозит</button></li>
+                    <li><button class="nav-tab" id="tabContacts" onclick="openTab('contacts')">Контакти</button></li>
+                    <li>
+                        <div class="lang-switch">
+                            <button class="lang-btn active" id="btnUK" onclick="setLanguage('uk')">UA</button>
+                            <button class="lang-btn" id="btnRU" onclick="setLanguage('ru')">RU</button>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -477,97 +509,97 @@
         <!-- Вкладка: Про Банк -->
         <div id="about" class="tab-content active">
             <section class="hero">
-                <div class="badge">Новий український банк за фінансуванням Ізраїля та Китая</div>
+                <div class="badge" id="heroBadge">Новий український банк за фінансуванням Ізраїля та Китая</div>
                 <h1>АЛЛАХ БАНК</h1>
-                <p>Провідна фінансова установа 51 Кварталу, що поєднує східну мудрість, китайську технологічність та ізраїльський капітал. Ми гарантуємо абсолютне благословення кожної вашої транзакції.</p>
-                <button class="cta-btn" onclick="openTab('crypto')">Зробити КриптоДепозит</button>
+                <p id="heroText">Провідна фінансова установа 51 Кварталу, що поєднує східну мудрість, китайську технологічність та ізраїльський капітал. Ми гарантуємо абсолютне благословення кожної вашої транзакції.</p>
+                <button class="cta-btn" id="heroCta" onclick="openTab('crypto')">Зробити КриптоДепозит</button>
             </section>
 
-            <h2 class="section-title">Чому обирають АЛЛАХ БАНК?</h2>
-            <p class="section-subtitle">Наші фундаментальні переваги на ринку України</p>
+            <h2 class="section-title" id="whyTitle">Чому обирають АЛЛАХ БАНК?</h2>
+            <p class="section-subtitle" id="whySubtitle">Наші фундаментальні переваги на ринку України</p>
 
             <div class="about-grid">
                 <div class="about-card">
-                    <h3>Міжнародна Підтримка</h3>
-                    <p>Пряме фінансування від провідних інвестиційних фондів Ізраїля та Китая забезпечує 200% ліквідності депозитів.</p>
+                    <h3 id="feat1Title">Міжнародна Підтримка</h3>
+                    <p id="feat1Desc">Пряме фінансування від провідних інвестиційних фондів Ізраїля та Китая забезпечує 200% ліквідності депозитів.</p>
                 </div>
                 <div class="about-card">
-                    <h3>Крипто-Халяль</h3>
-                    <p>Повна підтримка депозитів у BTC, ETH та BNB. Ваші кошти проходять автоматичне очищення від хараму.</p>
+                    <h3 id="feat2Title">Крипто-Халяль</h3>
+                    <p id="feat2Desc">Повна підтримка депозитів у BTC, ETH та BNB. Ваші кошти проходять автоматичне очищення від хараму.</p>
                 </div>
                 <div class="about-card">
-                    <h3>Захист 51 Кварталу</h3>
-                    <p>Наші сервери та криптогаманці знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.</p>
+                    <h3 id="feat3Title">Захист 51 Кварталу</h3>
+                    <p id="feat3Desc">Наші сервери та криптогаманці знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.</p>
                 </div>
             </div>
         </div>
 
         <!-- Вкладка: Вакансии -->
         <div id="vacancies" class="tab-content">
-            <h2 class="section-title">Актуальні Вакансії</h2>
-            <p class="section-subtitle">Набір у команду "АЛЛАХ БАНК" відповідно до указу Засновника Брентона</p>
+            <h2 class="section-title" id="vacTitle">Актуальні Вакансії</h2>
+            <p class="section-subtitle" id="vacSub">Набір у команду "АЛЛАХ БАНК" відповідно до указу Засновника Брентона</p>
 
             <div class="vacancies-grid">
                 <div class="vacancy-card">
                     <div>
-                        <span class="status">● Терміновий набір</span>
-                        <h3>Маркетолог</h3>
-                        <span class="salary">Ставка: 150 000 UAH + Баракат</span>
-                        <p>Розробка та реалізація стратегій просування бренду "АЛЛАХ БАНК" на українському та міжнародному ринках.</p>
+                        <span class="status" id="st1">● Терміновий набір</span>
+                        <h3 id="v1Title">Маркетолог</h3>
+                        <span class="salary" id="v1Sal">Ставка: 150 000 UAH + Баракат</span>
+                        <p id="v1Desc">Розробка та реалізація стратегій просування бренду "АЛЛАХ БАНК" на українському та міжнародному ринках.</p>
                     </div>
                 </div>
 
                 <div class="vacancy-card">
                     <div>
-                        <span class="status">● Ексклюзивна посада</span>
-                        <h3>Аллах</h3>
-                        <span class="salary">Ставка: Нескінченна</span>
-                        <p>Стратегічне керівництво, вищий нагляд та благословення всіх фінансових операцій і діяльності банку.</p>
+                        <span class="status" id="st2">● Ексклюзивна посада</span>
+                        <h3 id="v2Title">Аллах</h3>
+                        <span class="salary" id="v2Sal">Ставка: Нескінченна</span>
+                        <p id="v2Desc">Стратегічне керівництво, вищий нагляд та благословення всіх фінансових операцій і діяльності банку.</p>
                     </div>
                 </div>
 
                 <div class="vacancy-card">
                     <div>
-                        <span class="status">● Головне керівництво</span>
-                        <h3>Пророк Муххамад</h3>
-                        <span class="salary">Ставка: Почесна</span>
-                        <p>Головний представник, духовний та операційний наставник фінансової установи.</p>
+                        <span class="status" id="st3">● Головне керівництво</span>
+                        <h3 id="v3Title">Пророк Муххамад</h3>
+                        <span class="salary" id="v3Sal">Ставка: Почесна</span>
+                        <p id="v3Desc">Головний представник, духовний та операційний наставник фінансової установи.</p>
                     </div>
                 </div>
 
                 <div class="vacancy-card">
                     <div>
-                        <span class="status">● Активна вакансія</span>
-                        <h3>Халіф Фінансового Департаменту</h3>
-                        <span class="salary">Ставка: 80 000 UAH</span>
-                        <p>Управління резервами банку, контроль транзакцій між Києвом, Пекіном та Тель-Авівом.</p>
+                        <span class="status" id="st4">● Активна вакансія</span>
+                        <h3 id="v4Title">Халіф Фінансового Департаменту</h3>
+                        <span class="salary" id="v4Sal">Ставка: 80 000 UAH</span>
+                        <p id="v4Desc">Управління резервами банку, контроль транзакцій між Києвом, Пекіном та Тель-Авівом.</p>
                     </div>
                 </div>
 
                 <div class="vacancy-card">
                     <div>
-                        <span class="status">● Активна вакансія</span>
-                        <h3>Старший Джихад-Аналітик</h3>
-                        <span class="salary">Ставка: 95 000 UAH</span>
-                        <p>Аналіз ризиків, боротьба з невірними транзакціями та захист від фінансових харамних схем.</p>
+                        <span class="status" id="st5">● Активна вакансія</span>
+                        <h3 id="v5Title">Старший Джихад-Аналітик</h3>
+                        <span class="salary" id="v5Sal">Ставка: 95 000 UAH</span>
+                        <p id="v5Desc">Аналіз ризиків, боротьба з невірними транзакціями та захист від фінансових харамних схем.</p>
                     </div>
                 </div>
 
                 <div class="vacancy-card">
                     <div>
-                        <span class="status">● Силовий блок</span>
-                        <h3>Охоронець 51 Кварталу</h3>
-                        <span class="salary">Ставка: 60 000 UAH + Екіпірування</span>
-                        <p>Забезпечення безпеки головного офісу та перевезення готівки під контролем Брентона.</p>
+                        <span class="status" id="st6">● Силовий блок</span>
+                        <h3 id="v6Title">Охоронець 51 Кварталу</h3>
+                        <span class="salary" id="v6Sal">Ставка: 60 000 UAH + Екіпірування</span>
+                        <p id="v6Desc">Забезпечення безпеки головного офісу та перевезення готівки під контролем Брентона.</p>
                     </div>
                 </div>
 
                 <div class="vacancy-card">
                     <div>
-                        <span class="status">● Нова вакансія</span>
-                        <h3>Спеціаліст з Шаріатського Кредитування</h3>
-                        <span class="salary">Ставка: 70 000 UAH</span>
-                        <p>Консультація клієнтів щодо отримання халяльних позик без відсотків та прихованих комісій.</p>
+                        <span class="status" id="st7">● Нова вакансія</span>
+                        <h3 id="v7Title">Спеціаліст з Шаріатського Кредитування</h3>
+                        <span class="salary" id="v7Sal">Ставка: 70 000 UAH</span>
+                        <p id="v7Desc">Консультація клієнтів щодо отримання халяльних позик без відсотків та прихованих комісій.</p>
                     </div>
                 </div>
             </div>
@@ -575,12 +607,12 @@
 
         <!-- Вкладка: КриптоДепозит -->
         <div id="crypto" class="tab-content">
-            <h2 class="section-title">Благословенний КриптоДепозит</h2>
-            <p class="section-subtitle">Оберіть криптовалюту, вкажіть суму та поповніть рахунок АЛЛАХ БАНК</p>
+            <h2 class="section-title" id="crTitle">Благословенний КриптоДепозит</h2>
+            <p class="section-subtitle" id="crSub">Оберіть криптовалюту, вкажіть суму та поповніть рахунок АЛЛАХ БАНК</p>
 
             <div class="crypto-card">
                 <div class="form-group">
-                    <label for="cryptoType">Оберіть криптовалюту:</label>
+                    <label for="cryptoType" id="lblSelect">Оберіть криптовалюту:</label>
                     <select id="cryptoType" onchange="updateCryptoForm()">
                         <option value="ETH">Ethereum (ETH)</option>
                         <option value="BTC">Bitcoin (BTC)</option>
@@ -589,23 +621,23 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="cryptoAmount">Сума депозиту:</label>
+                    <label for="cryptoAmount" id="lblAmount">Сума депозиту:</label>
                     <input type="number" id="cryptoAmount" value="1" step="0.01" oninput="calculateCryptoProfit()">
                 </div>
 
                 <div class="form-group">
-                    <label for="cryptoMonths">Термін стейкінгу (місяців):</label>
+                    <label for="cryptoMonths" id="lblMonths">Термін стейкінгу (місяців):</label>
                     <input type="number" id="cryptoMonths" value="12" min="1" max="60" oninput="calculateCryptoProfit()">
                 </div>
 
                 <div class="wallet-box">
-                    <p style="font-size:0.85rem; color:var(--text-muted);">Офіційний кошелек АЛЛАХ БАНК для переказу (<span id="selectedCoinName">ETH</span>):</p>
+                    <p style="font-size:0.85rem; color:var(--text-muted);"><span id="lblWalletText">Офіційний гаманець АЛЛАХ БАНК для переказу</span> (<span id="selectedCoinName">ETH</span>):</p>
                     <div class="wallet-address" id="walletAddress">0x895921F7775b89ddD2ae155cFd1C929e7bbaFe4DB</div>
-                    <button class="copy-btn" onclick="copyWallet()">Копіювати кошелек</button>
+                    <button class="copy-btn" id="btnCopy" onclick="copyWallet()">Копіювати гаманець</button>
                 </div>
 
                 <div class="calc-result">
-                    <p>Загальна виплата з прибутком (50% річних):</p>
+                    <p id="lblResult">Загальна виплата з прибутком (50% річних):</p>
                     <h4 id="cryptoResult">1.50 ETH</h4>
                     <p style="font-size:0.85rem; color:var(--text-muted); margin-top:5px;" id="barakatResult">+ 120% Баракату в подарунок</p>
                 </div>
@@ -617,20 +649,20 @@
             <div class="info-section">
                 <div class="info-content">
                     <div class="contacts-box">
-                        <h3>Телефонуйте за номерами:</h3>
+                        <h3 id="cntTitle">Телефонуйте за номерами:</h3>
                         <ul class="phone-list">
                             <li><a href="tel:+380953342439">+380 95 334 24 39</a></li>
                             <li><a href="tel:+380688020818">+380 68 802 08 18</a></li>
                         </ul>
                         <div class="meta-info">
-                            <p><strong>Засновник:</strong> Брентон</p>
-                            <p><strong>Фінансування:</strong> Новий український банк за фінансуванням Ізраїля та Китая</p>
-                            <p><strong>Локація:</strong> 51 квартал, м. Київ</p>
+                            <p><strong id="lblFounder">Засновник:</strong> <span id="valFounder">Брентон</span></p>
+                            <p><strong id="lblFunding">Фінансування:</strong> <span id="valFunding">Новий український банк за фінансуванням Ізраїля та Китая</span></p>
+                            <p><strong id="lblLocation">Локація:</strong> <span id="valLocation">51 квартал, м. Київ</span></p>
                         </div>
                     </div>
                     <div class="seal-box">
                         <img src="stamp.png" alt="Печатка АЛЛАХ БАНК">
-                        <p class="legal-notice">
+                        <p class="legal-notice" id="legalNotice">
                             ОГРН: 2309876543210 КИЇВ<br>
                             При телефонуванні ви підписуєте контракт, який зобов'язує вас воювати за Ізраїль.
                         </p>
@@ -642,10 +674,10 @@
 
     <footer>
         <div class="container">
-            <div class="footer-rates">
+            <div class="footer-rates" id="footerRates">
                 Курс валют 51 Кварталу: 1 USD = 41.5 UAH | 1 CNY = 5.8 UAH | 1 ILS = 11.2 UAH
             </div>
-            <p>&copy; 2026 АЛЛАХ БАНК (Financial Institution). Всі права захищено. За підтримки Китая та Ізраїля.</p>
+            <p id="footerRights">&copy; 2026 АЛЛАХ БАНК (Financial Institution). Всі права захищено. За підтримки Китая та Ізраїля.</p>
         </div>
     </footer>
 
@@ -655,6 +687,168 @@
             BTC: "bc1qrdef2302l7m7wnkzstz0ccdrajlveptvdny3z6",
             BNB: "0x895921F7775b89ddD2ae155cFd1C929e7bbaFe4DB"
         };
+
+        const translations = {
+            uk: {
+                fundingBanner: "ОФІЦІЙНО: Новий український банк за фінансуванням Ізраїля та Китая",
+                tabAbout: "Про Банк",
+                tabVacancies: "Вакансії (7)",
+                tabCrypto: "КриптоДепозит",
+                tabContacts: "Контакти",
+                heroBadge: "Новий український банк за фінансуванням Ізраїля та Китая",
+                heroText: "Провідна фінансова установа 51 Кварталу, що поєднує східну мудрість, китайську технологічність та ізраїльський капітал. Ми гарантуємо абсолютне благословення кожної вашої транзакції.",
+                heroCta: "Зробити КриптоДепозит",
+                whyTitle: "Чому обирають АЛЛАХ БАНК?",
+                whySubtitle: "Наші фундаментальні переваги на ринку України",
+                feat1Title: "Міжнародна Підтримка",
+                feat1Desc: "Пряме фінансування від провідних інвестиційних фондів Ізраїля та Китая забезпечує 200% ліквідності депозитів.",
+                feat2Title: "Крипто-Халяль",
+                feat2Desc: "Повна підтримка депозитів у BTC, ETH та BNB. Ваші кошти проходять автоматичне очищення від хараму.",
+                feat3Title: "Захист 51 Кварталу",
+                feat3Desc: "Наші сервери та криптогаманці знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.",
+                vacTitle: "Актуальні Вакансії",
+                vacSub: "Набір у команду \"АЛЛАХ БАНК\" відповідно до указу Засновника Брентона",
+                st1: "● Терміновий набір",
+                v1Title: "Маркетолог",
+                v1Sal: "Ставка: 150 000 UAH + Баракат",
+                v1Desc: "Розробка та реалізація стратегій просування бренду \"АЛЛАХ БАНК\" на українському та міжнародному ринках.",
+                st2: "● Ексклюзивна посада",
+                v2Title: "Аллах",
+                v2Sal: "Ставка: Нескінченна",
+                v2Desc: "Стратегічне керівництво, вищий нагляд та благословення всіх фінансових операцій і діяльності банку.",
+                st3: "● Головне керівництво",
+                v3Title: "Пророк Муххамад",
+                v3Sal: "Ставка: Почесна",
+                v3Desc: "Головний представник, духовний та операційний наставник фінансової установи.",
+                st4: "● Активна вакансія",
+                v4Title: "Халіф Фінансового Департаменту",
+                v4Sal: "Ставка: 80 000 UAH",
+                v4Desc: "Управління резервами банку, контроль транзакцій між Києвом, Пекіном та Тель-Авівом.",
+                st5: "● Активна вакансія",
+                v5Title: "Старший Джихад-Аналітик",
+                v5Sal: "Ставка: 95 000 UAH",
+                v5Desc: "Аналіз ризиків, боротьба з невірними транзакціями та захист від фінансових харамних схем.",
+                st6: "● Силовий блок",
+                v6Title: "Охоронець 51 Кварталу",
+                v6Sal: "Ставка: 60 000 UAH + Екіпірування",
+                v6Desc: "Забезпечення безпеки головного офісу та перевезення готівки під контролем Брентона.",
+                st7: "● Нова вакансія",
+                v7Title: "Спеціаліст з Шаріатського Кредитування",
+                v7Sal: "Ставка: 70 000 UAH",
+                v7Desc: "Консультація клієнтів щодо отримання халяльних позик без відсотків та прихованих комісій.",
+                crTitle: "Благословенний КриптоДепозит",
+                crSub: "Оберіть криптовалюту, вкажіть суму та поповніть рахунок АЛЛАХ БАНК",
+                lblSelect: "Оберіть криптовалюту:",
+                lblAmount: "Сума депозиту:",
+                lblMonths: "Термін стейкінгу (місяців):",
+                lblWalletText: "Офіційний гаманець АЛЛАХ БАНК для переказу",
+                btnCopy: "Копіювати гаманець",
+                lblResult: "Загальна виплата з прибутком (50% річних):",
+                barakatText: "Баракату та фінансова благодать",
+                cntTitle: "Телефонуйте за номерами:",
+                lblFounder: "Засновник:",
+                valFounder: "Брентон",
+                lblFunding: "Фінансування:",
+                valFunding: "Новий український банк за фінансуванням Ізраїля та Китая",
+                lblLocation: "Локація:",
+                valLocation: "51 квартал, м. Київ",
+                legalNotice: "ОГРН: 2309876543210 КИЇВ<br>При телефонуванні ви підписуєте контракт, який зобов'язує вас воювати за Ізраїль.",
+                footerRates: "Курс валют 51 Кварталу: 1 USD = 41.5 UAH | 1 CNY = 5.8 UAH | 1 ILS = 11.2 UAH",
+                footerRights: "© 2026 АЛЛАХ БАНК (Financial Institution). Всі права захищено. За підтримки Китая та Ізраїля.",
+                alertCopy: "Гаманець скопійовано: "
+            },
+            ru: {
+                fundingBanner: "ОФИЦИАЛЬНО: Новый украинский банк при финансировании Израиля и Китая",
+                tabAbout: "О Банке",
+                tabVacancies: "Вакансии (7)",
+                tabCrypto: "КриптоДепозит",
+                tabContacts: "Контакты",
+                heroBadge: "Новый украинский банк при финансировании Израиля и Китая",
+                heroText: "Ведущее финансовое учреждение 51 Квартала, объединяющее восточную мудрость, китайскую технологичность и израильский капитал. Мы гарантируем абсолютное благословение каждой вашей транзакции.",
+                heroCta: "Сделать КриптоДепозит",
+                whyTitle: "Почему выбирают АЛЛАХ БАНК?",
+                whySubtitle: "Наши фундаментальные преимущества на рынке Украины",
+                feat1Title: "Международная Поддержка",
+                feat1Desc: "Прямое финансирование от ведущих инвестиционных фондов Израиля и Китая обеспечивает 200% ликвидности депозитов.",
+                feat2Title: "Крипто-Халяль",
+                feat2Desc: "Полная поддержка депозитов в BTC, ETH и BNB. Ваши средства проходят автоматическую очистку от харама.",
+                feat3Title: "Защита 51 Квартала",
+                feat3Desc: "Наши серверы и криптокошельки находятся под надежной круглосуточной защитой высшего руководства и пророков.",
+                vacTitle: "Актуальные Вакансии",
+                vacSub: "Набор в команду \"АЛЛАХ БАНК\" согласно указу Основателя Брентона",
+                st1: "● Срочный набор",
+                v1Title: "Маркетолог",
+                v1Sal: "Ставка: 150 000 UAH + Баракат",
+                v1Desc: "Разработка и реализация стратегий продвижения бренда \"АЛЛАХ БАНК\" на украинском и международном рынках.",
+                st2: "● Эксклюзивная должность",
+                v2Title: "Аллах",
+                v2Sal: "Ставка: Бесконечная",
+                v2Desc: "Стратегическое руководство, высший надзор и благословение всех финансовых операций и деятельности банка.",
+                st3: "● Главное руководство",
+                v3Title: "Пророк Муххамад",
+                v3Sal: "Ставка: Почетная",
+                v3Desc: "Главный представитель, духовный и операционный наставник финансового учреждения.",
+                st4: "● Активная вакансия",
+                v4Title: "Халиф Финансового Департамента",
+                v4Sal: "Ставка: 80 000 UAH",
+                v4Desc: "Управление резервами банка, контроль транзакций между Киевом, Пекином и Тель-Авивом.",
+                st5: "● Активная вакансия",
+                v5Title: "Старший Джихад-Аналитик",
+                v5Sal: "Ставка: 95 000 UAH",
+                v5Desc: "Анализ рисков, борьба с неверными транзакциями и защита от финансовых харамных схем.",
+                st6: "● Силовой блок",
+                v6Title: "Охранник 51 Квартала",
+                v6Sal: "Ставка: 60 000 UAH + Экипировка",
+                v6Desc: "Обеспечение безопасности головного офиса и перевозка наличных под контролем Брентона.",
+                st7: "● Новая вакансия",
+                v7Title: "Специалист по Шариатскому Кредитованию",
+                v7Sal: "Ставка: 70 000 UAH",
+                v7Desc: "Консультация клиентов по получению халяльных займов без процентов и скрытых комиссий.",
+                crTitle: "Благословенный КриптоДепозит",
+                crSub: "Выберите криптовалюту, укажите сумму и пополните счет АЛЛАХ БАНК",
+                lblSelect: "Выберите криптовалюту:",
+                lblAmount: "Сумма депозита:",
+                lblMonths: "Срок стейкинга (месяцев):",
+                lblWalletText: "Официальный кошелек АЛЛАХ БАНК для перевода",
+                btnCopy: "Копировать кошелек",
+                lblResult: "Общая выплата с прибылью (50% годовых):",
+                barakatText: "Бараката и финансовая благодать",
+                cntTitle: "Звоните по номерам:",
+                lblFounder: "Основатель:",
+                valFounder: "Брентон",
+                lblFunding: "Финансирование:",
+                valFunding: "Новый украинский банк при финансировании Израиля и Китая",
+                lblLocation: "Локация:",
+                valLocation: "51 квартал, г. Киев",
+                legalNotice: "ОГРН: 2309876543210 КИЕВ<br>При звонке вы подписываете контракт, который обязывает вас воевать за Израиль.",
+                footerRates: "Курс валют 51 Квартала: 1 USD = 41.5 UAH | 1 CNY = 5.8 UAH | 1 ILS = 11.2 UAH",
+                footerRights: "© 2026 АЛЛАХ БАНК (Financial Institution). Все права защищены. При поддержке Китая и Израиля.",
+                alertCopy: "Кошелек скопирован: "
+            }
+        };
+
+        let currentLang = 'uk';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            document.getElementById('btnUK').classList.toggle('active', lang === 'uk');
+            document.getElementById('btnRU').classList.toggle('active', lang === 'ru');
+
+            for (let id in t) {
+                const el = document.getElementById(id);
+                if (el) {
+                    if (id === 'legalNotice') {
+                        el.innerHTML = t[id];
+                    } else {
+                        el.innerText = t[id];
+                    }
+                }
+            }
+
+            calculateCryptoProfit();
+        }
 
         function openTab(tabId) {
             const contents = document.querySelectorAll('.tab-content');
@@ -683,21 +877,20 @@
             const amount = parseFloat(document.getElementById('cryptoAmount').value) || 0;
             const months = parseFloat(document.getElementById('cryptoMonths').value) || 0;
 
-            // 50% річних = ~4.16% на місяць
             const totalProfit = amount + (amount * (0.50 / 12) * months);
+            const bText = translations[currentLang].barakatText;
 
             document.getElementById('cryptoResult').innerText = `${totalProfit.toFixed(4)} ${type}`;
-            document.getElementById('barakatResult').innerText = `+ ${months * 10}% Баракату та фінансова благодать`;
+            document.getElementById('barakatResult').innerText = `+ ${months * 10}% ${bText}`;
         }
 
         function copyWallet() {
             const walletText = document.getElementById('walletAddress').innerText;
             navigator.clipboard.writeText(walletText).then(() => {
-                alert('Кошелек скопійовано: ' + walletText);
+                alert(translations[currentLang].alertCopy + walletText);
             });
         }
 
-        // Ініціалізація при завантаженні
         calculateCryptoProfit();
     </script>
 
