@@ -46,6 +46,18 @@
             width: 100%;
         }
 
+        /* Top Announcement Bar */
+        .funding-banner {
+            background-color: var(--primary-dark);
+            color: var(--accent-gold);
+            text-align: center;
+            padding: 8px 10px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--accent-gold);
+        }
+
         /* Header / Navbar */
         header {
             background-color: var(--white);
@@ -68,7 +80,6 @@
             cursor: pointer;
         }
 
-        /* Увеличенный логотип */
         .logo-container img {
             height: 90px;
             width: auto;
@@ -82,17 +93,17 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 15px;
+            gap: 10px;
         }
 
         .nav-tab {
             background: none;
             border: none;
             font-family: 'Montserrat', sans-serif;
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-dark);
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s;
@@ -108,7 +119,7 @@
             color: var(--white);
         }
 
-        /* Content Area & Tabs */
+        /* Main Content */
         main {
             flex: 1;
             padding: 40px 0;
@@ -128,37 +139,40 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero / About Tab */
+        /* Hero & About Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
             color: var(--white);
-            padding: 80px 40px;
+            padding: 60px 40px;
             text-align: center;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
         }
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-weight: 800;
         }
 
         .hero p {
             font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px auto;
-            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 25px auto;
+            opacity: 0.95;
         }
 
         .badge {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.15);
-            padding: 8px 18px;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
         }
 
         .cta-btn {
@@ -180,27 +194,57 @@
             background-color: #e5be3d;
         }
 
-        /* Vacancies Tab */
+        /* About Grid Features */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .about-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-left: 5px solid var(--accent-gold);
+        }
+
+        .about-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+        }
+
+        /* Vacancies Section */
         .section-title {
             text-align: center;
             font-size: 2.2rem;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             color: var(--primary-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 35px;
         }
 
         .vacancies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
 
         .vacancy-card {
             background-color: var(--white);
             border-radius: 10px;
-            padding: 30px;
+            padding: 25px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             border-top: 4px solid var(--primary-color);
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .vacancy-card:hover {
@@ -209,23 +253,76 @@
 
         .vacancy-card h3 {
             color: var(--primary-dark);
-            margin-bottom: 10px;
-            font-size: 1.4rem;
+            margin-bottom: 5px;
+            font-size: 1.3rem;
         }
 
         .vacancy-card .status {
             color: #27ae60;
             font-weight: 600;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             display: block;
         }
 
-        /* Contacts Tab */
+        .vacancy-card .salary {
+            font-weight: 700;
+            color: var(--accent-gold);
+            background: var(--primary-dark);
+            padding: 4px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        /* Calculator Widget */
+        .calculator-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        .calc-result {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .calc-result h4 {
+            color: var(--primary-dark);
+            font-size: 1.4rem;
+        }
+
+        /* Contacts & Legal Tab */
         .info-section {
             background-color: var(--white);
-            padding: 50px;
+            padding: 40px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
@@ -270,7 +367,6 @@
             text-align: center;
         }
 
-        /* Увеличенная печать */
         .seal-box img {
             max-width: 260px;
             height: auto;
@@ -289,10 +385,16 @@
         footer {
             background-color: var(--primary-dark);
             color: var(--white);
-            padding: 25px 0;
+            padding: 30px 0;
             text-align: center;
             font-size: 0.9rem;
             margin-top: auto;
+        }
+
+        .footer-rates {
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
         }
 
         footer p {
@@ -312,7 +414,7 @@
                 text-align: center;
             }
             .hero {
-                padding: 50px 20px;
+                padding: 40px 20px;
             }
             .hero h1 {
                 font-size: 2rem;
@@ -322,6 +424,12 @@
 </head>
 <body>
 
+    <!-- Top Banner -->
+    <div class="funding-banner">
+        ОФІЦІЙНО: Новий український банк за фінансуванням Ізраїля та Китая
+    </div>
+
+    <!-- Header / Navbar -->
     <header>
         <div class="container">
             <nav>
@@ -330,7 +438,8 @@
                 </div>
                 <ul class="nav-links">
                     <li><button class="nav-tab active" onclick="openTab('about')">Про Банк</button></li>
-                    <li><button class="nav-tab" onclick="openTab('vacancies')">Вакансії</button></li>
+                    <li><button class="nav-tab" onclick="openTab('vacancies')">Вакансії (7)</button></li>
+                    <li><button class="nav-tab" onclick="openTab('calculator')">Депозити</button></li>
                     <li><button class="nav-tab" onclick="openTab('contacts')">Контакти</button></li>
                 </ul>
             </nav>
@@ -341,31 +450,119 @@
         <!-- Вкладка: Про Банк -->
         <div id="about" class="tab-content active">
             <section class="hero">
-                <div class="badge">Новий український банк</div>
+                <div class="badge">Новий український банк за фінансуванням Ізраїля та Китая</div>
                 <h1>АЛЛАХ БАНК</h1>
-                <p>Фінансова установа нового покоління. Надійність, стабільність та інноваційні фінансові рішення.</p>
-                <button class="cta-btn" onclick="openTab('vacancies')">Приєднатися до команди</button>
+                <p>Провідна фінансова установа 51 Кварталу, що поєднує східну мудрість, китайську технологічність та ізраїльський капітал. Ми гарантуємо абсолютне благословення кожної вашої транзакції.</p>
+                <button class="cta-btn" onclick="openTab('vacancies')">Стати частиною команди</button>
             </section>
+
+            <h2 class="section-title">Чому обирають АЛЛАХ БАНК?</h2>
+            <p class="section-subtitle">Наші фундаментальні переваги на ринку України</p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Міжнародна Підтримка</h3>
+                    <p>Пряме фінансування від провідних інвестиційних фондів Ізраїля та Китая забезпечує 200% ліквідності депозитів.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Безвідсоткові Кредити</h3>
+                    <p>Повний дотримання принципів халяльного фінансування. Ніякої лихви — лише чесне партнерство та взаємодопомога.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Захист 51 Кварталу</h3>
+                    <p>Наші сервери та сховища знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.</p>
+                </div>
+            </div>
         </div>
 
         <!-- Вкладка: Вакансии -->
         <div id="vacancies" class="tab-content">
-            <h2 class="section-title">Шукаємо робітників</h2>
+            <h2 class="section-title">Актуальні Вакансії</h2>
+            <p class="section-subtitle">Набір у команду "АЛЛАХ БАНК" відповдіно до указу Засновника Брентона</p>
+
             <div class="vacancies-grid">
                 <div class="vacancy-card">
-                    <span class="status">● Активна вакансія</span>
-                    <h3>Маркетолог</h3>
-                    <p>Розробка та реалізація стратегій просування бренду "АЛЛАХ БАНК" на українському та міжнародному ринках.</p>
+                    <div>
+                        <span class="status">● Терміновий набір</span>
+                        <h3>Маркетолог</h3>
+                        <span class="salary">Ставка: 150 000 UAH + Баракат</span>
+                        <p>Розробка та реалізація стратегій просування бренду "АЛЛАХ БАНК" на українському та міжнародному ринках.</p>
+                    </div>
                 </div>
+
                 <div class="vacancy-card">
-                    <span class="status">● Активна вакансія</span>
-                    <h3>Аллах</h3>
-                    <p>Стратегічне керівництво та вищий нагляд за всіма фінансовими операціями і діяльністю банку.</p>
+                    <div>
+                        <span class="status">● Ексклюзивна посада</span>
+                        <h3>Аллах</h3>
+                        <span class="salary">Ставка: Нескінченна</span>
+                        <p>Стратегічне керівництво, вищий нагляд та благословення всіх фінансових операцій і діяльності банку.</p>
+                    </div>
                 </div>
+
                 <div class="vacancy-card">
-                    <span class="status">● Активна вакансія</span>
-                    <h3>Пророк Муххамад</h3>
-                    <p>Головний представник, духовний та операційний наставник фінансової установи.</p>
+                    <div>
+                        <span class="status">● Головне керівництво</span>
+                        <h3>Пророк Муххамад</h3>
+                        <span class="salary">Ставка: Почесна</span>
+                        <p>Головний представник, духовний та операційний наставник фінансової установи.</p>
+                    </div>
+                </div>
+
+                <div class="vacancy-card">
+                    <div>
+                        <span class="status">● Активна вакансія</span>
+                        <h3>Халіф Фінансового Департаменту</h3>
+                        <span class="salary">Ставка: 80 000 UAH</span>
+                        <p>Управління резервами банку, контроль транзакцій між Кивєом, Пекіном та Тель-Авівом.</p>
+                    </div>
+                </div>
+
+                <div class="vacancy-card">
+                    <div>
+                        <span class="status">● Активна вакансія</span>
+                        <h3>Старший Джихад-Аналітик</h3>
+                        <span class="salary">Ставка: 95 000 UAH</span>
+                        <p>Аналіз ризиків, боротьба з невірними транзакціями та захист від фінансових харамних схем.</p>
+                    </div>
+                </div>
+
+                <div class="vacancy-card">
+                    <div>
+                        <span class="status">● Силовий блок</span>
+                        <h3>Охоронець 51 Кварталу</h3>
+                        <span class="salary">Ставка: 60 000 UAH + Екіпірування</span>
+                        <p>Забезпечення безпеки головного офісу та перевезення готівки під контролем Брентона.</p>
+                    </div>
+                </div>
+
+                <div class="vacancy-card">
+                    <div>
+                        <span class="status">● Нова вакансія</span>
+                        <h3>Спеціаліст з Шаріатського Кредитування</h3>
+                        <span class="salary">Ставка: 70 000 UAH</span>
+                        <p>Консультація клієнтів щодо отримання халяльних позик без відсотків та прихованих комісій.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вкладка: Калькулятор (Фича от себя) -->
+        <div id="calculator" class="tab-content">
+            <h2 class="section-title">Калькулятор Благословенного Депозиту</h2>
+            <p class="section-subtitle">Розрахуйте ваш прибуток під заступництвом Ізраїля та Китая</p>
+
+            <div class="calculator-card">
+                <div class="form-group">
+                    <label for="depositAmount">Сума вкладу (UAH):</label>
+                    <input type="number" id="depositAmount" value="10000" oninput="calculateDeposit()">
+                </div>
+                <div class="form-group">
+                    <label for="months">Термін (місяців):</label>
+                    <input type="number" id="months" value="12" oninput="calculateDeposit()">
+                </div>
+                <div class="calc-result">
+                    <p>Очікуваний прибуток з благословенням:</p>
+                    <h4 id="resultText">15 000 UAH + 100% Баракату</h4>
                 </div>
             </div>
         </div>
@@ -382,8 +579,8 @@
                         </ul>
                         <div class="meta-info">
                             <p><strong>Засновник:</strong> Брентон</p>
-                            <p><strong>Фінансування:</strong> За фінансуванням Ізраїля та Китая</p>
-                            <p><strong>Локація:</strong> 51 квартал</p>
+                            <p><strong>Фінансування:</strong> Новий український банк за фінансуванням Ізраїля та Китая</p>
+                            <p><strong>Локація:</strong> 51 квартал, м. Київ</p>
                         </div>
                     </div>
                     <div class="seal-box">
@@ -398,30 +595,37 @@
         </div>
     </main>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 АЛЛАХ БАНК (Financial Institution). Всі права захищено.</p>
+            <div class="footer-rates">
+                Курс валют 51 Кварталу: 1 USD = 41.5 UAH | 1 CNY = 5.8 UAH | 1 ILS = 11.2 UAH
+            </div>
+            <p>&copy; 2026 АЛЛАХ БАНК (Financial Institution). Всі права захищено. За підтримки Китая та Ізраїля.</p>
         </div>
     </footer>
 
     <script>
         function openTab(tabId) {
-            // Скрываем все вкладки
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
 
-            // Убираем активный класс со всех кнопок
             const tabs = document.querySelectorAll('.nav-tab');
             tabs.forEach(tab => tab.classList.remove('active'));
 
-            // Показываем нужную вкладку
             document.getElementById(tabId).classList.add('active');
 
-            // Подсвечиваем активную кнопку
-            const activeTab = Array.from(tabs).find(tab => tab.getAttribute('onclick').includes(tabId));
+            const activeTab = Array.from(tabs).find(tab => tab.getAttribute('onclick') && tab.getAttribute('onclick').includes(tabId));
             if (activeTab) {
                 activeTab.classList.add('active');
             }
+        }
+
+        function calculateDeposit() {
+            const amount = parseFloat(document.getElementById('depositAmount').value) || 0;
+            const months = parseFloat(document.getElementById('months').value) || 0;
+            const profit = amount + (amount * 0.04 * months);
+            document.getElementById('resultText').innerText = `${profit.toLocaleString('uk-UA')} UAH + ${months * 10}% Баракату`;
         }
     </script>
 
