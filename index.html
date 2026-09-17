@@ -46,7 +46,6 @@
             width: 100%;
         }
 
-        /* Top Announcement Bar */
         .funding-banner {
             background-color: var(--primary-dark);
             color: var(--accent-gold);
@@ -58,7 +57,6 @@
             border-bottom: 1px solid var(--accent-gold);
         }
 
-        /* Header / Navbar */
         header {
             background-color: var(--white);
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -119,7 +117,6 @@
             color: var(--white);
         }
 
-        /* Main Content */
         main {
             flex: 1;
             padding: 40px 0;
@@ -139,7 +136,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Hero & About Section */
         .hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
             color: var(--white);
@@ -194,7 +190,6 @@
             background-color: #e5be3d;
         }
 
-        /* About Grid Features */
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -215,7 +210,6 @@
             margin-bottom: 12px;
         }
 
-        /* Vacancies Section */
         .section-title {
             text-align: center;
             font-size: 2.2rem;
@@ -277,13 +271,13 @@
             margin-bottom: 15px;
         }
 
-        /* Calculator Widget */
-        .calculator-card {
+        /* Crypto Deposit Widget */
+        .crypto-card {
             background: var(--white);
             padding: 35px;
             border-radius: 12px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             border-top: 5px solid var(--accent-gold);
         }
@@ -298,12 +292,47 @@
             margin-bottom: 8px;
         }
 
-        .form-group input {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ccc;
             border-radius: 6px;
             font-size: 1rem;
+            background: var(--white);
+        }
+
+        .wallet-box {
+            background: #eef2f5;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed var(--primary-color);
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .wallet-address {
+            font-family: monospace;
+            font-weight: bold;
+            color: var(--primary-dark);
+            word-break: break-all;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .copy-btn {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: var(--primary-dark);
         }
 
         .calc-result {
@@ -312,14 +341,15 @@
             border-radius: 8px;
             text-align: center;
             margin-top: 20px;
+            border-left: 4px solid #27ae60;
         }
 
         .calc-result h4 {
-            color: var(--primary-dark);
-            font-size: 1.4rem;
+            color: #27ae60;
+            font-size: 1.5rem;
+            margin-top: 5px;
         }
 
-        /* Contacts & Legal Tab */
         .info-section {
             background-color: var(--white);
             padding: 40px;
@@ -381,7 +411,6 @@
             font-style: italic;
         }
 
-        /* Footer */
         footer {
             background-color: var(--primary-dark);
             color: var(--white);
@@ -424,12 +453,10 @@
 </head>
 <body>
 
-    <!-- Top Banner -->
     <div class="funding-banner">
         ОФІЦІЙНО: Новий український банк за фінансуванням Ізраїля та Китая
     </div>
 
-    <!-- Header / Navbar -->
     <header>
         <div class="container">
             <nav>
@@ -439,7 +466,7 @@
                 <ul class="nav-links">
                     <li><button class="nav-tab active" onclick="openTab('about')">Про Банк</button></li>
                     <li><button class="nav-tab" onclick="openTab('vacancies')">Вакансії (7)</button></li>
-                    <li><button class="nav-tab" onclick="openTab('calculator')">Депозити</button></li>
+                    <li><button class="nav-tab" onclick="openTab('crypto')">КриптоДепозит</button></li>
                     <li><button class="nav-tab" onclick="openTab('contacts')">Контакти</button></li>
                 </ul>
             </nav>
@@ -453,7 +480,7 @@
                 <div class="badge">Новий український банк за фінансуванням Ізраїля та Китая</div>
                 <h1>АЛЛАХ БАНК</h1>
                 <p>Провідна фінансова установа 51 Кварталу, що поєднує східну мудрість, китайську технологічність та ізраїльський капітал. Ми гарантуємо абсолютне благословення кожної вашої транзакції.</p>
-                <button class="cta-btn" onclick="openTab('vacancies')">Стати частиною команди</button>
+                <button class="cta-btn" onclick="openTab('crypto')">Зробити КриптоДепозит</button>
             </section>
 
             <h2 class="section-title">Чому обирають АЛЛАХ БАНК?</h2>
@@ -465,12 +492,12 @@
                     <p>Пряме фінансування від провідних інвестиційних фондів Ізраїля та Китая забезпечує 200% ліквідності депозитів.</p>
                 </div>
                 <div class="about-card">
-                    <h3>Безвідсоткові Кредити</h3>
-                    <p>Повний дотримання принципів халяльного фінансування. Ніякої лихви — лише чесне партнерство та взаємодопомога.</p>
+                    <h3>Крипто-Халяль</h3>
+                    <p>Повна підтримка депозитів у BTC, ETH та BNB. Ваші кошти проходять автоматичне очищення від хараму.</p>
                 </div>
                 <div class="about-card">
                     <h3>Захист 51 Кварталу</h3>
-                    <p>Наші сервери та сховища знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.</p>
+                    <p>Наші сервери та криптогаманці знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.</p>
                 </div>
             </div>
         </div>
@@ -478,7 +505,7 @@
         <!-- Вкладка: Вакансии -->
         <div id="vacancies" class="tab-content">
             <h2 class="section-title">Актуальні Вакансії</h2>
-            <p class="section-subtitle">Набір у команду "АЛЛАХ БАНК" відповдіно до указу Засновника Брентона</p>
+            <p class="section-subtitle">Набір у команду "АЛЛАХ БАНК" відповідно до указу Засновника Брентона</p>
 
             <div class="vacancies-grid">
                 <div class="vacancy-card">
@@ -513,7 +540,7 @@
                         <span class="status">● Активна вакансія</span>
                         <h3>Халіф Фінансового Департаменту</h3>
                         <span class="salary">Ставка: 80 000 UAH</span>
-                        <p>Управління резервами банку, контроль транзакцій між Кивєом, Пекіном та Тель-Авівом.</p>
+                        <p>Управління резервами банку, контроль транзакцій між Києвом, Пекіном та Тель-Авівом.</p>
                     </div>
                 </div>
 
@@ -546,23 +573,41 @@
             </div>
         </div>
 
-        <!-- Вкладка: Калькулятор (Фича от себя) -->
-        <div id="calculator" class="tab-content">
-            <h2 class="section-title">Калькулятор Благословенного Депозиту</h2>
-            <p class="section-subtitle">Розрахуйте ваш прибуток під заступництвом Ізраїля та Китая</p>
+        <!-- Вкладка: КриптоДепозит -->
+        <div id="crypto" class="tab-content">
+            <h2 class="section-title">Благословенний КриптоДепозит</h2>
+            <p class="section-subtitle">Оберіть криптовалюту, вкажіть суму та поповніть рахунок АЛЛАХ БАНК</p>
 
-            <div class="calculator-card">
+            <div class="crypto-card">
                 <div class="form-group">
-                    <label for="depositAmount">Сума вкладу (UAH):</label>
-                    <input type="number" id="depositAmount" value="10000" oninput="calculateDeposit()">
+                    <label for="cryptoType">Оберіть криптовалюту:</label>
+                    <select id="cryptoType" onchange="updateCryptoForm()">
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="BNB">Binance Coin (BNB)</option>
+                    </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="months">Термін (місяців):</label>
-                    <input type="number" id="months" value="12" oninput="calculateDeposit()">
+                    <label for="cryptoAmount">Сума депозиту:</label>
+                    <input type="number" id="cryptoAmount" value="1" step="0.01" oninput="calculateCryptoProfit()">
                 </div>
+
+                <div class="form-group">
+                    <label for="cryptoMonths">Термін стейкінгу (місяців):</label>
+                    <input type="number" id="cryptoMonths" value="12" min="1" max="60" oninput="calculateCryptoProfit()">
+                </div>
+
+                <div class="wallet-box">
+                    <p style="font-size:0.85rem; color:var(--text-muted);">Офіційний кошелек АЛЛАХ БАНК для переказу (<span id="selectedCoinName">ETH</span>):</p>
+                    <div class="wallet-address" id="walletAddress">0x895921F7775b89ddD2ae155cFd1C929e7bbaFe4DB</div>
+                    <button class="copy-btn" onclick="copyWallet()">Копіювати кошелек</button>
+                </div>
+
                 <div class="calc-result">
-                    <p>Очікуваний прибуток з благословенням:</p>
-                    <h4 id="resultText">15 000 UAH + 100% Баракату</h4>
+                    <p>Загальна виплата з прибутком (50% річних):</p>
+                    <h4 id="cryptoResult">1.50 ETH</h4>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:5px;" id="barakatResult">+ 120% Баракату в подарунок</p>
                 </div>
             </div>
         </div>
@@ -595,7 +640,6 @@
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-rates">
@@ -606,6 +650,12 @@
     </footer>
 
     <script>
+        const wallets = {
+            ETH: "0x895921F7775b89ddD2ae155cFd1C929e7bbaFe4DB",
+            BTC: "bc1qrdef2302l7m7wnkzstz0ccdrajlveptvdny3z6",
+            BNB: "0x895921F7775b89ddD2ae155cFd1C929e7bbaFe4DB"
+        };
+
         function openTab(tabId) {
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
@@ -621,12 +671,34 @@
             }
         }
 
-        function calculateDeposit() {
-            const amount = parseFloat(document.getElementById('depositAmount').value) || 0;
-            const months = parseFloat(document.getElementById('months').value) || 0;
-            const profit = amount + (amount * 0.04 * months);
-            document.getElementById('resultText').innerText = `${profit.toLocaleString('uk-UA')} UAH + ${months * 10}% Баракату`;
+        function updateCryptoForm() {
+            const type = document.getElementById('cryptoType').value;
+            document.getElementById('selectedCoinName').innerText = type;
+            document.getElementById('walletAddress').innerText = wallets[type];
+            calculateCryptoProfit();
         }
+
+        function calculateCryptoProfit() {
+            const type = document.getElementById('cryptoType').value;
+            const amount = parseFloat(document.getElementById('cryptoAmount').value) || 0;
+            const months = parseFloat(document.getElementById('cryptoMonths').value) || 0;
+
+            // 50% річних = ~4.16% на місяць
+            const totalProfit = amount + (amount * (0.50 / 12) * months);
+
+            document.getElementById('cryptoResult').innerText = `${totalProfit.toFixed(4)} ${type}`;
+            document.getElementById('barakatResult').innerText = `+ ${months * 10}% Баракату та фінансова благодать`;
+        }
+
+        function copyWallet() {
+            const walletText = document.getElementById('walletAddress').innerText;
+            navigator.clipboard.writeText(walletText).then(() => {
+                alert('Кошелек скопійовано: ' + walletText);
+            });
+        }
+
+        // Ініціалізація при завантаженні
+        calculateCryptoProfit();
     </script>
 
 </body>
