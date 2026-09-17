@@ -79,7 +79,7 @@
         }
 
         .logo-container img {
-            height: 90px;
+            height: 75px;
             width: auto;
             transition: transform 0.2s;
         }
@@ -91,18 +91,19 @@
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 10px;
+            gap: 5px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-tab {
             background: none;
             border: none;
             font-family: 'Montserrat', sans-serif;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             font-weight: 600;
             color: var(--text-dark);
-            padding: 10px 18px;
+            padding: 8px 12px;
             border-radius: 6px;
             cursor: pointer;
             transition: all 0.3s;
@@ -118,7 +119,6 @@
             color: var(--white);
         }
 
-        /* Переключатель языка */
         .lang-switch {
             display: flex;
             gap: 5px;
@@ -131,9 +131,9 @@
         .lang-btn {
             border: none;
             background: none;
-            padding: 5px 10px;
+            padding: 4px 8px;
             font-weight: bold;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             cursor: pointer;
             border-radius: 4px;
             transition: all 0.2s;
@@ -166,22 +166,22 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
             color: var(--white);
-            padding: 60px 40px;
+            padding: 50px 30px;
             text-align: center;
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             margin-bottom: 15px;
             font-weight: 800;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
+            font-size: 1.1rem;
+            max-width: 850px;
             margin: 0 auto 25px auto;
             opacity: 0.95;
         }
@@ -202,7 +202,7 @@
             display: inline-block;
             background-color: var(--accent-gold);
             color: var(--primary-dark);
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 6px;
             font-weight: 700;
             text-transform: uppercase;
@@ -217,16 +217,41 @@
             background-color: #e5be3d;
         }
 
+        /* Блок-напоминалка про КриптоДепозит на всех страницах */
+        .crypto-reminder-banner {
+            background: linear-gradient(90deg, #1e4142 0%, #2b5b5c 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: var(--white);
+            gap: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .crypto-reminder-banner .reminder-text h3 {
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+        }
+
+        .crypto-reminder-banner .reminder-text p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         .about-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            gap: 20px;
+            margin-top: 25px;
         }
 
         .about-card {
             background: var(--white);
-            padding: 30px;
+            padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.04);
             border-left: 5px solid var(--accent-gold);
@@ -239,7 +264,7 @@
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 10px;
             color: var(--primary-dark);
         }
@@ -247,43 +272,38 @@
         .section-subtitle {
             text-align: center;
             color: var(--text-muted);
-            margin-bottom: 35px;
+            margin-bottom: 30px;
         }
 
         .vacancies-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
 
         .vacancy-card {
             background-color: var(--white);
             border-radius: 10px;
-            padding: 25px;
+            padding: 22px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             border-top: 4px solid var(--primary-color);
-            transition: transform 0.3s;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .vacancy-card:hover {
-            transform: translateY(-5px);
-        }
-
         .vacancy-card h3 {
             color: var(--primary-dark);
             margin-bottom: 5px;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
 
         .vacancy-card .status {
             color: #27ae60;
             font-weight: 600;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             display: block;
         }
 
@@ -291,11 +311,11 @@
             font-weight: 700;
             color: var(--accent-gold);
             background: var(--primary-dark);
-            padding: 4px 10px;
+            padding: 4px 8px;
             border-radius: 4px;
             display: inline-block;
-            font-size: 0.85rem;
-            margin-bottom: 15px;
+            font-size: 0.8rem;
+            margin-bottom: 12px;
         }
 
         .crypto-card {
@@ -378,7 +398,7 @@
 
         .info-section {
             background-color: var(--white);
-            padding: 40px;
+            padding: 35px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
@@ -386,25 +406,25 @@
         .info-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
+            gap: 30px;
+            align-items: flex-start;
         }
 
         .contacts-box h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: var(--primary-dark);
-            font-size: 1.5rem;
+            font-size: 1.4rem;
         }
 
         .phone-list {
             list-style: none;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .phone-list li {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: var(--primary-color);
         }
 
@@ -413,10 +433,57 @@
             text-decoration: none;
         }
 
-        .meta-info {
-            font-size: 1rem;
-            color: var(--text-muted);
-            line-height: 1.8;
+        /* Таблица тарифов */
+        .rates-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-top: 20px;
+        }
+
+        .rates-table th, .rates-table td {
+            padding: 14px 18px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .rates-table th {
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+
+        .tg-managers {
+            background: #eef6fc;
+            border: 1px solid #bce0fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .tg-managers h4 {
+            color: #0088cc;
+            margin-bottom: 8px;
+        }
+
+        .tg-managers ul {
+            list-style: none;
+        }
+
+        .tg-managers li {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .tg-managers a {
+            color: #0088cc;
+            text-decoration: none;
+        }
+
+        .tg-managers a:hover {
+            text-decoration: underline;
         }
 
         .seal-box {
@@ -424,7 +491,7 @@
         }
 
         .seal-box img {
-            max-width: 260px;
+            max-width: 240px;
             height: auto;
             opacity: 0.95;
         }
@@ -461,15 +528,12 @@
                 flex-direction: column;
                 gap: 15px;
             }
-            .logo-container img {
-                height: 70px;
+            .crypto-reminder-banner {
+                flex-direction: column;
+                text-align: center;
             }
             .info-content {
                 grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero {
-                padding: 40px 20px;
             }
             .hero h1 {
                 font-size: 2rem;
@@ -491,8 +555,11 @@
                 </div>
                 <ul class="nav-links">
                     <li><button class="nav-tab active" id="tabAbout" onclick="openTab('about')">Про Банк</button></li>
-                    <li><button class="nav-tab" id="tabVacancies" onclick="openTab('vacancies')">Вакансії (7)</button></li>
                     <li><button class="nav-tab" id="tabCrypto" onclick="openTab('crypto')">КриптоДепозит</button></li>
+                    <li><button class="nav-tab" id="tabInvest" onclick="openTab('invest')">Інвестиції</button></li>
+                    <li><button class="nav-tab" id="tabCredit" onclick="openTab('credit')">Кредитування</button></li>
+                    <li><button class="nav-tab" id="tabTariffs" onclick="openTab('tariffs')">Тарифи</button></li>
+                    <li><button class="nav-tab" id="tabVacancies" onclick="openTab('vacancies')">Вакансії (7)</button></li>
                     <li><button class="nav-tab" id="tabContacts" onclick="openTab('contacts')">Контакти</button></li>
                     <li>
                         <div class="lang-switch">
@@ -506,13 +573,14 @@
     </header>
 
     <main class="container">
+
         <!-- Вкладка: Про Банк -->
         <div id="about" class="tab-content active">
             <section class="hero">
                 <div class="badge" id="heroBadge">Новий український банк за фінансуванням Ізраїля та Китая</div>
                 <h1>АЛЛАХ БАНК</h1>
                 <p id="heroText">Провідна фінансова установа 51 Кварталу, що поєднує східну мудрість, китайську технологічність та ізраїльський капітал. Ми гарантуємо абсолютне благословення кожної вашої транзакції.</p>
-                <button class="cta-btn" id="heroCta" onclick="openTab('crypto')">Зробити КриптоДепозит</button>
+                <button class="cta-btn" id="heroCta" onclick="openTab('crypto')">Зробити КриптоДепозит под 50%</button>
             </section>
 
             <h2 class="section-title" id="whyTitle">Чому обирають АЛЛАХ БАНК?</h2>
@@ -531,6 +599,149 @@
                     <h3 id="feat3Title">Захист 51 Кварталу</h3>
                     <p id="feat3Desc">Наші сервери та криптогаманці знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.</p>
                 </div>
+                <div class="about-card">
+                    <h3 id="feat4Title">Брентон Технології</h3>
+                    <p id="feat4Desc">Інноваційні алгоритми обробки платежів від Засновника Брентона гарантують миттєве виконання транзакцій.</p>
+                </div>
+            </div>
+
+            <!-- Reminder Banner -->
+            <div class="crypto-reminder-banner">
+                <div class="reminder-text">
+                    <h3 class="rem-title">Примножуйте капітал благословенно!</h3>
+                    <p class="rem-desc">У нас найвищі процентні ставки на ринку — 50% річних на будь-який КриптоДепозит!</p>
+                </div>
+                <button class="cta-btn rem-btn" onclick="openTab('crypto')">Відкрити Депозит</button>
+            </div>
+        </div>
+
+        <!-- Вкладка: КриптоДепозит -->
+        <div id="crypto" class="tab-content">
+            <h2 class="section-title" id="crTitle">Благословенний КриптоДепозит</h2>
+            <p class="section-subtitle" id="crSub">Найкращі ставки на ринку: 50% річних + бонуси Баракату на кожен переказ!</p>
+
+            <div class="crypto-card">
+                <div class="form-group">
+                    <label for="cryptoType" id="lblSelect">Оберіть криптовалюту:</label>
+                    <select id="cryptoType" onchange="updateCryptoForm()">
+                        <option value="ETH">Ethereum (ETH)</option>
+                        <option value="BTC">Bitcoin (BTC)</option>
+                        <option value="BNB">Binance Coin (BNB)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cryptoAmount" id="lblAmount">Сума депозиту:</label>
+                    <input type="number" id="cryptoAmount" value="1" step="0.01" oninput="calculateCryptoProfit()">
+                </div>
+
+                <div class="form-group">
+                    <label for="cryptoMonths" id="lblMonths">Термін стейкінгу (місяців):</label>
+                    <input type="number" id="cryptoMonths" value="12" min="1" max="60" oninput="calculateCryptoProfit()">
+                </div>
+
+                <div class="wallet-box">
+                    <p style="font-size:0.85rem; color:var(--text-muted);"><span id="lblWalletText">Офіційний гаманець АЛЛАХ БАНК для переказу</span> (<span id="selectedCoinName">ETH</span>):</p>
+                    <div class="wallet-address" id="walletAddress">0x895921F7775b89ddD2ae155cFd1C929e7bbaFe4DB</div>
+                    <button class="copy-btn" id="btnCopy" onclick="copyWallet()">Копіювати гаманець</button>
+                </div>
+
+                <div class="calc-result">
+                    <p id="lblResult">Загальна виплата з прибутком (50% річних):</p>
+                    <h4 id="cryptoResult">1.50 ETH</h4>
+                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:5px;" id="barakatResult">+ 120% Баракату в подарунок</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Вкладка: Инвестиции -->
+        <div id="invest" class="tab-content">
+            <h2 class="section-title" id="invTitle">Інвестиційні Програми</h2>
+            <p class="section-subtitle" id="invSub">Інвестуйте в проекти 51 Кварталу, Пекіна та Тель-Авіва</p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Фонд "Ізраїль-Китай"</h3>
+                    <p>Спільні високотехнологічні розробки з гарантованим поверненням 35% річних.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Облігації 51 Кварталу</h3>
+                    <p>Надійна підтримка інфраструктури з виплатою дивідендів щомісяця.</p>
+                </div>
+            </div>
+
+            <div class="crypto-reminder-banner">
+                <div class="reminder-text">
+                    <h3 class="rem-title">Шукаєте максимальну прибутковість?</h3>
+                    <p class="rem-desc">Інвестиції — це чудово, але наш КриптоДепозит дає до 50% річних без ризиків!</p>
+                </div>
+                <button class="cta-btn rem-btn" onclick="openTab('crypto')">Перейти до Депозиту</button>
+            </div>
+        </div>
+
+        <!-- Вкладка: Кредитование -->
+        <div id="credit" class="tab-content">
+            <h2 class="section-title" id="credTitle">Шаріатське Кредитування</h2>
+            <p class="section-subtitle" id="credSub">Безвідсоткові позики на засадах халялю та повної довіри</p>
+
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Халяльна Позика</h3>
+                    <p>Кредити без ростовщицтва (риба). Ви сплачуєте тільки чисту суму та отримуєте благословення.</p>
+                </div>
+                <div class="about-card">
+                    <h3>Бізнес-Мудараба</h3>
+                    <p>Фінансування ваших стартапів у 51 Кварталі за підтримки вищого керівництва.</p>
+                </div>
+            </div>
+
+            <div class="crypto-reminder-banner">
+                <div class="reminder-text">
+                    <h3 class="rem-title">Потрібні кошти? Або хочете примножити?</h3>
+                    <p class="rem-desc">Замість кредиту відкрийте КриптоДепозит під 50% і живіть на пасивний прибуток!</p>
+                </div>
+                <button class="cta-btn rem-btn" onclick="openTab('crypto')">Поповнити КриптоРахунок</button>
+            </div>
+        </div>
+
+        <!-- Вкладка: Тарифы -->
+        <div id="tariffs" class="tab-content">
+            <h2 class="section-title" id="tarTitle">Тарифи та Обслуговування</h2>
+            <p class="section-subtitle" id="tarSub">Прозорі умови без прихованих комісій</p>
+
+            <table class="rates-table">
+                <thead>
+                    <tr>
+                        <th id="thService">Послуга</th>
+                        <th id="thCost">Комісія</th>
+                        <th id="thBonus">Баракат-Бонус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="t1S">Обслуговування картки</td>
+                        <td id="t1C">0 UAH</td>
+                        <td id="t1B">100% Халяль</td>
+                    </tr>
+                    <tr>
+                        <td id="t2S">Перекази між рахунками</td>
+                        <td id="t2C">0%</td>
+                        <td id="t2B">Миттєво</td>
+                    </tr>
+                    <tr>
+                        <td id="t3S">КриптоДепозит (Staking)</td>
+                        <td id="t3C">0%</td>
+                        <td id="t3B">+50% Річних (Найкраща ставка)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="crypto-reminder-banner">
+                <div class="reminder-text">
+                    <h3 class="rem-title">Нульова комісія на КриптоДепозити!</h3>
+                    <p class="rem-desc">Вносьте BTC, ETH або BNB без жодних зборів та отримуйте найвищий процент у світі!</p>
+                </div>
+                <button class="cta-btn rem-btn" onclick="openTab('crypto')">Оформити под 50%</button>
             </div>
         </div>
 
@@ -603,44 +814,13 @@
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Вкладка: КриптоДепозит -->
-        <div id="crypto" class="tab-content">
-            <h2 class="section-title" id="crTitle">Благословенний КриптоДепозит</h2>
-            <p class="section-subtitle" id="crSub">Оберіть криптовалюту, вкажіть суму та поповніть рахунок АЛЛАХ БАНК</p>
-
-            <div class="crypto-card">
-                <div class="form-group">
-                    <label for="cryptoType" id="lblSelect">Оберіть криптовалюту:</label>
-                    <select id="cryptoType" onchange="updateCryptoForm()">
-                        <option value="ETH">Ethereum (ETH)</option>
-                        <option value="BTC">Bitcoin (BTC)</option>
-                        <option value="BNB">Binance Coin (BNB)</option>
-                    </select>
+            <div class="crypto-reminder-banner">
+                <div class="reminder-text">
+                    <h3 class="rem-title">Працюєте у нас чи шукаєте роботу?</h3>
+                    <p class="rem-desc">Отримуйте зарплату або примножуйте заощадження в наш КриптоДепозит під 50% річних!</p>
                 </div>
-
-                <div class="form-group">
-                    <label for="cryptoAmount" id="lblAmount">Сума депозиту:</label>
-                    <input type="number" id="cryptoAmount" value="1" step="0.01" oninput="calculateCryptoProfit()">
-                </div>
-
-                <div class="form-group">
-                    <label for="cryptoMonths" id="lblMonths">Термін стейкінгу (місяців):</label>
-                    <input type="number" id="cryptoMonths" value="12" min="1" max="60" oninput="calculateCryptoProfit()">
-                </div>
-
-                <div class="wallet-box">
-                    <p style="font-size:0.85rem; color:var(--text-muted);"><span id="lblWalletText">Офіційний гаманець АЛЛАХ БАНК для переказу</span> (<span id="selectedCoinName">ETH</span>):</p>
-                    <div class="wallet-address" id="walletAddress">0x895921F7775b89ddD2ae155cFd1C929e7bbaFe4DB</div>
-                    <button class="copy-btn" id="btnCopy" onclick="copyWallet()">Копіювати гаманець</button>
-                </div>
-
-                <div class="calc-result">
-                    <p id="lblResult">Загальна виплата з прибутком (50% річних):</p>
-                    <h4 id="cryptoResult">1.50 ETH</h4>
-                    <p style="font-size:0.85rem; color:var(--text-muted); margin-top:5px;" id="barakatResult">+ 120% Баракату в подарунок</p>
-                </div>
+                <button class="cta-btn rem-btn" onclick="openTab('crypto')">Інвестувати зараз</button>
             </div>
         </div>
 
@@ -654,6 +834,16 @@
                             <li><a href="tel:+380953342439">+380 95 334 24 39</a></li>
                             <li><a href="tel:+380688020818">+380 68 802 08 18</a></li>
                         </ul>
+
+                        <div class="tg-managers">
+                            <h4 id="tgTitle">Telegram Менеджери 24/7:</h4>
+                            <ul>
+                                <li>Менеджер 1: <a href="https://t.me/BrokenBrainCells" target="_blank">@BrokenBrainCells</a></li>
+                                <li>Менеджер 2: <a href="https://t.me/Gato_vodolazik" target="_blank">@Gato_vodolazik</a></li>
+                            </ul>
+                        </div>
+
+                        <br>
                         <div class="meta-info">
                             <p><strong id="lblFounder">Засновник:</strong> <span id="valFounder">Брентон</span></p>
                             <p><strong id="lblFunding">Фінансування:</strong> <span id="valFunding">Новий український банк за фінансуванням Ізраїля та Китая</span></p>
@@ -669,7 +859,16 @@
                     </div>
                 </div>
             </div>
+
+            <div class="crypto-reminder-banner">
+                <div class="reminder-text">
+                    <h3 class="rem-title">Залишились питання? Наші менеджери допоможуть!</h3>
+                    <p class="rem-desc">Пишіть у Telegram менеджерам та відкривайте КриптоДепозит із найкращою ставкою 50%!</p>
+                </div>
+                <button class="cta-btn rem-btn" onclick="openTab('crypto')">Зробити Депозит</button>
+            </div>
         </div>
+
     </main>
 
     <footer>
@@ -692,12 +891,15 @@
             uk: {
                 fundingBanner: "ОФІЦІЙНО: Новий український банк за фінансуванням Ізраїля та Китая",
                 tabAbout: "Про Банк",
-                tabVacancies: "Вакансії (7)",
                 tabCrypto: "КриптоДепозит",
+                tabInvest: "Інвестиції",
+                tabCredit: "Кредитування",
+                tabTariffs: "Тарифи",
+                tabVacancies: "Вакансії (7)",
                 tabContacts: "Контакти",
                 heroBadge: "Новий український банк за фінансуванням Ізраїля та Китая",
                 heroText: "Провідна фінансова установа 51 Кварталу, що поєднує східну мудрість, китайську технологічність та ізраїльський капітал. Ми гарантуємо абсолютне благословення кожної вашої транзакції.",
-                heroCta: "Зробити КриптоДепозит",
+                heroCta: "Зробити КриптоДепозит под 50%",
                 whyTitle: "Чому обирають АЛЛАХ БАНК?",
                 whySubtitle: "Наші фундаментальні переваги на ринку України",
                 feat1Title: "Міжнародна Підтримка",
@@ -706,6 +908,20 @@
                 feat2Desc: "Повна підтримка депозитів у BTC, ETH та BNB. Ваші кошти проходять автоматичне очищення від хараму.",
                 feat3Title: "Захист 51 Кварталу",
                 feat3Desc: "Наші сервери та криптогаманці знаходяться під надійним цілодобовим захистом вищого керівництва та пророків.",
+                feat4Title: "Брентон Технології",
+                feat4Desc: "Інноваційні алгоритми обробки платежів від Засновника Брентона гарантують миттєве виконання транзакцій.",
+                invTitle: "Інвестиційні Програми",
+                invSub: "Інвестуйте в проекти 51 Кварталу, Пекіна та Тель-Авіва",
+                credTitle: "Шаріатське Кредитування",
+                credSub: "Безвідсоткові позики на засадах халялю та повної довіри",
+                tarTitle: "Тарифи та Обслуговування",
+                tarSub: "Прозорі умови без прихованих комісій",
+                thService: "Послуга",
+                thCost: "Комісія",
+                thBonus: "Баракат-Бонус",
+                t1S: "Обслуговування картки", t1C: "0 UAH", t1B: "100% Халяль",
+                t2S: "Перекази між рахунками", t2C: "0%", t2B: "Миттєво",
+                t3S: "КриптоДепозит (Staking)", t3C: "0%", t3B: "+50% Річних (Найкраща ставка)",
                 vacTitle: "Актуальні Вакансії",
                 vacSub: "Набір у команду \"АЛЛАХ БАНК\" відповідно до указу Засновника Брентона",
                 st1: "● Терміновий набір",
@@ -737,7 +953,7 @@
                 v7Sal: "Ставка: 70 000 UAH",
                 v7Desc: "Консультація клієнтів щодо отримання халяльних позик без відсотків та прихованих комісій.",
                 crTitle: "Благословенний КриптоДепозит",
-                crSub: "Оберіть криптовалюту, вкажіть суму та поповніть рахунок АЛЛАХ БАНК",
+                crSub: "Найкращі ставки на ринку: 50% річних + бонуси Баракату на кожен переказ!",
                 lblSelect: "Оберіть криптовалюту:",
                 lblAmount: "Сума депозиту:",
                 lblMonths: "Термін стейкінгу (місяців):",
@@ -746,6 +962,7 @@
                 lblResult: "Загальна виплата з прибутком (50% річних):",
                 barakatText: "Баракату та фінансова благодать",
                 cntTitle: "Телефонуйте за номерами:",
+                tgTitle: "Telegram Менеджери 24/7:",
                 lblFounder: "Засновник:",
                 valFounder: "Брентон",
                 lblFunding: "Фінансування:",
@@ -760,12 +977,15 @@
             ru: {
                 fundingBanner: "ОФИЦИАЛЬНО: Новый украинский банк при финансировании Израиля и Китая",
                 tabAbout: "О Банке",
-                tabVacancies: "Вакансии (7)",
                 tabCrypto: "КриптоДепозит",
+                tabInvest: "Инвестиции",
+                tabCredit: "Кредитование",
+                tabTariffs: "Тарифы",
+                tabVacancies: "Вакансии (7)",
                 tabContacts: "Контакты",
                 heroBadge: "Новый украинский банк при финансировании Израиля и Китая",
                 heroText: "Ведущее финансовое учреждение 51 Квартала, объединяющее восточную мудрость, китайскую технологичность и израильский капитал. Мы гарантируем абсолютное благословение каждой вашей транзакции.",
-                heroCta: "Сделать КриптоДепозит",
+                heroCta: "Сделать КриптоДепозит под 50%",
                 whyTitle: "Почему выбирают АЛЛАХ БАНК?",
                 whySubtitle: "Наши фундаментальные преимущества на рынке Украины",
                 feat1Title: "Международная Поддержка",
@@ -774,6 +994,20 @@
                 feat2Desc: "Полная поддержка депозитов в BTC, ETH и BNB. Ваши средства проходят автоматическую очистку от харама.",
                 feat3Title: "Защита 51 Квартала",
                 feat3Desc: "Наши серверы и криптокошельки находятся под надежной круглосуточной защитой высшего руководства и пророков.",
+                feat4Title: "Брентон Технологии",
+                feat4Desc: "Инновационные алгоритмы обработки платежей от Основателя Брентона гарантируют мгновенное исполнение транзакций.",
+                invTitle: "Инвестиционные Программы",
+                invSub: "Инвестируйте в проекты 51 Квартала, Пекина и Тель-Авива",
+                credTitle: "Шариатское Кредитование",
+                credSub: "Беспроцентные займы на основах халяля и полного доверия",
+                tarTitle: "Тарифы и Обслуживание",
+                tarSub: "Прозрачные условия без скрытых комиссий",
+                thService: "Услуга",
+                thCost: "Комиссия",
+                thBonus: "Баракат-Бонус",
+                t1S: "Обслуживание карты", t1C: "0 UAH", t1B: "100% Халяль",
+                t2S: "Переводы между счетами", t2C: "0%", t2B: "Мгновенно",
+                t3S: "КриптоДепозит (Staking)", t3C: "0%", t3B: "+50% Годовых (Лучшая ставка)",
                 vacTitle: "Актуальные Вакансии",
                 vacSub: "Набор в команду \"АЛЛАХ БАНК\" согласно указу Основателя Брентона",
                 st1: "● Срочный набор",
@@ -805,7 +1039,7 @@
                 v7Sal: "Ставка: 70 000 UAH",
                 v7Desc: "Консультация клиентов по получению халяльных займов без процентов и скрытых комиссий.",
                 crTitle: "Благословенный КриптоДепозит",
-                crSub: "Выберите криптовалюту, укажите сумму и пополните счет АЛЛАХ БАНК",
+                crSub: "Лучшие ставки на рынке: 50% годовых + бонусы Бараката на каждый перевод!",
                 lblSelect: "Выберите криптовалюту:",
                 lblAmount: "Сумма депозита:",
                 lblMonths: "Срок стейкинга (месяцев):",
@@ -814,6 +1048,7 @@
                 lblResult: "Общая выплата с прибылью (50% годовых):",
                 barakatText: "Бараката и финансовая благодать",
                 cntTitle: "Звоните по номерам:",
+                tgTitle: "Telegram Менеджеры 24/7:",
                 lblFounder: "Основатель:",
                 valFounder: "Брентон",
                 lblFunding: "Финансирование:",
@@ -863,6 +1098,8 @@
             if (activeTab) {
                 activeTab.classList.add('active');
             }
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function updateCryptoForm() {
