@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>АЛЛАХ БАНК — Financial Institution</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #2b5b5c;
+            --primary-dark: #1e4142;
+            --accent-gold: #d4af37;
+            --bg-light: #f8f9fa;
+            --text-dark: #2c3e50;
+            --text-muted: #6c757d;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 55px;
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+            opacity: 0.9;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            background-color: #e5be3d;
+        }
+
+        /* Vacancies Section */
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 50px 0 30px 0;
+            color: var(--primary-dark);
+        }
+
+        .vacancies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .vacancy-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+
+        .vacancy-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vacancy-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .vacancy-card .status {
+            color: #27ae60;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Contacts & Seal Section */
+        .info-section {
+            background-color: var(--white);
+            padding: 50px 0;
+            margin-bottom: 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+
+        .info-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contacts-box h3 {
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        .phone-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .phone-list li {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .phone-list a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .meta-info {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        .seal-box {
+            text-align: center;
+        }
+
+        .seal-box img {
+            max-width: 200px;
+            height: auto;
+            opacity: 0.9;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.1));
+        }
+
+        .legal-notice {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .info-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-links {
+                display: none; /* For simplicity on small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="Gemini_Generated_Image_ksrq1zksrq1zksrq-removebg-preview.png" alt="АЛЛАХ БАНК Логотип">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">Про Банк</a></li>
+                    <li><a href="#vacancies">Вакансії</a></li>
+                    <li><a href="#contacts">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="badge">Новий український банк</div>
+            <h1>АЛЛАХ БАНК</h1>
+            <p>Фінансова установа нового покоління. Надійність, стабільність та інноваційні фінансові рішення.</p>
+            <a href="#vacancies" class="cta-btn">Приєднатися до команди</a>
+        </div>
+    </section>
+
+    <!-- Vacancies Section -->
+    <section class="container" id="vacancies">
+        <h2 class="section-title">Шукаємо робітників</h2>
+        <div class="vacancies-grid">
+            <div class="vacancy-card">
+                <span class="status">● Активна вакансія</span>
+                <h3>Маркетолог</h3>
+                <p>Розробка та реалізація стратегій просування бренду "АЛЛАХ БАНК" на українському та міжнародному ринках.</p>
+            </div>
+            <div class="vacancy-card">
+                <span class="status">● Активна вакансія</span>
+                <h3>Аллах</h3>
+                <p>Стратегічне керівництво та вищий нагляд за всіма фінансовими операціями і діяльністю банку.</p>
+            </div>
+            <div class="vacancy-card">
+                <span class="status">● Активна вакансія</span>
+                <h3>Пророк Муххамад</h3>
+                <p>Головний представник, духовний та операційний наставник фінансової установи.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts & Legal Info -->
+    <section class="container" id="contacts">
+        <div class="info-section">
+            <div class="container">
+                <div class="info-content">
+                    <div class="contacts-box">
+                        <h3>Телефонуйте за номерами:</h3>
+                        <ul class="phone-list">
+                            <li><a href="tel:+380953342439">+380 95 334 24 39</a></li>
+                            <li><a href="tel:+380688020818">+380 68 802 08 18</a></li>
+                        </ul>
+                        <div class="meta-info">
+                            <p><strong>Засновник:</strong> Брентон</p>
+                            <p><strong>Фінансування:</strong> За фінансуванням Ізраїля та Китая</p>
+                            <p><strong>Локація:</strong> 51 квартал</p>
+                        </div>
+                    </div>
+                    <div class="seal-box">
+                        <img src="Gemini_Generated_Image_wham1hwham1hwham-removebg-preview.png" alt="Печатка АЛЛАХ БАНК">
+                        <p class="legal-notice">
+                            ОГРН: 2309876543210 КИЇВ<br>
+                            При телефонуванні ви підписуєте контракт, який зобов'язує вас воювати за Ізраїль.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 АЛЛАХ БАНК (Financial Institution). Всі права захищено.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
